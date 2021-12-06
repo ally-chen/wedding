@@ -151,6 +151,7 @@ align-items: center;
 `;
 
 export const FormItem = styled.div`
+position: relative;
 display: flex;
 align-items: flex-start;
 flex-wrap: wrap;
@@ -265,5 +266,99 @@ cursor: pointer;
 &:hover {
   color: #731e1e;
   background: #ffcba0;
+}
+`;
+
+export const ErrorText = styled.div`
+position: absolute;
+right: 0;
+top: 0;
+background-color: rgba(255, 255, 255, 0.8);
+color: #b50000;
+font-size: 14px;
+padding: 3px 6px;
+border-radius: 3px;
+@media (min-width: 1024px) {
+  position: relative;
+  left: 100px;
+  margin-top: 4px;
+  flex-basis: calc(100% - 100px);
+}
+`;
+
+const rotating = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+export const LoadingMask = styled.div`
+position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+z-index: 5;
+background-color: rgba(0, 0, 0, 0.6);
+display: flex;
+align-items: center;
+justify-content: center;
+&:before {
+  content: '';
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px dashed #fff;
+  opacity: 0.6;
+  animation: ${rotating} 2.5s linear infinite;
+}
+`;
+
+export const LinkList = styled.ul`
+padding: 0;
+margin: 20px 0;
+list-style: none;
+> li + li{
+  margin-top: 10px;
+}
+> li > a {
+  border-bottom: 1px solid;
+  font-size: 14px;
+  text-decoration: none;
+  color: #ffaaaa;
+  &:hover {
+    color: #ff6565;
+  }
+}
+`;
+
+export const NavLinkList = styled.ul`
+position: absolute;
+width: 100%;
+padding: 0;
+margin: 0;
+list-style: none;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+top: -2.5em;
+font-size: 14px;
+@media (min-width: 1024px) {
+font-size: 18px;
+}
+> li + li{
+  margin-top: 0;
+  margin-left: 1.5em;
+}
+> li > a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Gilda Display', serif;
+  font-style: italic;
+  &:hover {
+    color: #ff6565;
+  }
 }
 `;
