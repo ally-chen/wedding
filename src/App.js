@@ -31,8 +31,8 @@ const App = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   return (
     <Router>
+      {isLoading && <LoadingMask />}
       <Routes>
-        {isLoading && <LoadingMask />}
         <Route path="/" element={<Layout />}>
           <Route path="information" element={<Information />} />
           <Route path="gallery" element={<Gallery />} />
