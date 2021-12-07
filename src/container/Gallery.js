@@ -1,6 +1,11 @@
+import { Title } from '../style';
+
 const Gallery = () => {
   return (
-    <div>Gallery建置中</div>
+    <div>
+      <Title>Gallery</Title>
+      建置中
+    </div>
   );
 };
 

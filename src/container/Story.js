@@ -1,6 +1,10 @@
+import { Title } from '../style';
 const Story = () => {
   return (
-    <div>Our Story建置中</div>
+    <div>
+      <Title>Our Story</Title>
+      建置中
+    </div>
   );
 };
 

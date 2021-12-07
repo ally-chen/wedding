@@ -1,4 +1,6 @@
 import styled, { keyframes } from "styled-components";
+import border from "./images/border.svg";
+import border2 from "./images/border2.svg";
 
 export const CoverWrapper = styled.div`
 padding: 0 20px 20px;
@@ -50,6 +52,17 @@ background-color: rgb(160 29 29 / 65%);
 text-align: center;
 position: relative;
 z-index: 2;
+&:after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: -1;
+  border: 60px solid transparent;
+  border-image: url(${border}) 150 155 round;
+}
 &:before {
   content: '';
   position: absolute;
@@ -72,7 +85,7 @@ z-index: 2;
 
 export const CardContent = styled.div`
 height: 100%;
-padding: 30px 20px;
+padding: 50px 20px;
 overflow-y: scroll;
 &::-webkit-scrollbar{
   width: 6px;
@@ -97,6 +110,17 @@ margin-top: 10px;
 }
 @media (min-width: 1024px) {
   font-size: 72px;
+}
+`;
+
+export const SubTitle = styled.h2`
+font-weight: bold;
+font-family: 'Gilda Display',serif;
+font-size: 20px;
+letter-spacing: 0.05em;
+margin: 1.5em 0 0.75em;
+@media (min-width: 1024px) {
+  font-size: 28px;
 }
 `;
 
@@ -247,7 +271,7 @@ outline: none;
 font-family: inherit;
 color: inherit;
 letter-spacing: 0.03em;
-margin: 60px 0 30px;
+margin: 60px 0;
 > img {
   animation: ${jumpping} 0.3s ease-out infinite alternate;
 }
@@ -360,5 +384,46 @@ font-size: 18px;
   &:hover {
     color: #ff6565;
   }
+  &.active {
+    border-bottom: 1px solid;
+  }
+}
+`;
+
+export const TransportIcon = styled.img`
+border-radius: 4px;
+width: 26px;
+background:#ffcba0;
+margin-right: 6px;
+`
+
+export const FlexC = styled.div`
+display: flex;
+align-items: center;
+`;
+
+export const MrtTag = styled.div`
+padding: 2px 4px;
+border-radius: 3px;
+color: #fff;
+margin: 0 2px;
+`;
+
+export const TransportList = styled.ul`
+font-size: 14px;
+padding: 0;
+list-style:none;
+text-align: left;
+margin: 0 auto;
+max-width: 80%;
+>li {
+  margin-bottom: 1em;
+  padding-left: 30px;
+  ${FlexC} {
+    margin-left: -32px;
+  }
+}
+@media (min-width: 1024px) {
+  max-width: 60%;
 }
 `;

@@ -13,7 +13,7 @@ const Home = ({ setIsLoading }) => (
     </Title>
     <TextDefault>Sincerely invite you to their wedding!</TextDefault>
     <TextDateTime>
-      2021 03 12<br />
+      2022 03 12<br />
       <small>Saturday 12:30 P.M.</small>
     </TextDateTime>
     <TextLocation>
