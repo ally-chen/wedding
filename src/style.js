@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import border from "./images/border.svg";
-import border2 from "./images/border2.svg";
 
 export const CoverWrapper = styled.div`
 padding: 0 20px 20px;
@@ -421,7 +420,7 @@ font-size: 18px;
   .light &{
     color: #2d2d2d;
     &:hover {
-      color: #731e1e;
+      color: #ff6565;
     }
   }
   &:hover {
@@ -429,6 +428,7 @@ font-size: 18px;
   }
   &.active {
     border-bottom: 1px solid;
+    color: #ff6565;
   }
 }
 `;

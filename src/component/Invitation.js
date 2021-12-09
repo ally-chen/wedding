@@ -6,7 +6,7 @@ import { FormWrapper, FormItem, RadioGroup, RadioWrapper, BtnSubmit, ErrorText, 
 
 const Invitation = ({setIsLoading}) => {
   const [success, setSuccess] = React.useState(false);
-  const { handleSubmit, formState: { errors }, watch, register, getValues } = useForm({
+  const { handleSubmit, formState: { errors }, watch, register } = useForm({
     shouldUnregister: true
   });
   const onSubmit = async (data) => {

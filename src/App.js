@@ -12,7 +12,7 @@ const Layout = () => {
   const location = useLocation();
   console.log('l', location);
   return (
-    <CoverWrapper className={location.pathname === '/gallery' ? 'light' : ''}>
+    <CoverWrapper className={/gallery|story/.test(location.pathname) ? 'light' : ''}>
       <Figure style={{ backgroundImage: `url(${cover})` }}>
         <ChName>文翔 & 怡君</ChName>
       </Figure>
