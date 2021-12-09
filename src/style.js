@@ -16,6 +16,11 @@ position: relative;
   left: 0;
   z-index: 1;
 }
+&.light {
+  &:after {
+    background: #f2f2f2;
+  }
+}
 @media (min-width: 1024px) {
   height: 100vh;
   min-height: 600px;
@@ -28,6 +33,13 @@ position: relative;
     width: 60%;
     right: 0;
     left: auto;
+    transition: .3s linear all;
+  }
+  &.light {
+    &:after {
+      width: 140%;
+      background: linear-gradient(to right, transparent 10%, #f2f2f2 30%);
+    }
   }
 }
 `;
@@ -40,11 +52,18 @@ background-repeat: no-repeat;
 background-position: center 40%;
 position: relative;
 margin: 0 -20px;
+transition: .3s linear all;
+.light &{
+  height: 60px;
+}
 @media (min-width: 1024px) {
   height: 100%;
   width: 60%;
   margin: 0 0 0 -20px;
   background-position: center;
+  .light &{
+    height: 100%;
+  }
 }
 `;
 export const CardWrapper = styled.div`
@@ -52,6 +71,7 @@ background-color: rgb(160 29 29 / 65%);
 text-align: center;
 position: relative;
 z-index: 2;
+transition: .3s linear all;
 &:after {
   content: '';
   position: absolute;
@@ -61,7 +81,7 @@ z-index: 2;
   bottom: 16px;
   z-index: -1;
   border: 60px solid transparent;
-  border-image: url(${border}) 150 155 round;
+  border-image: url(${border}) 155 155 round;
 }
 &:before {
   content: '';
@@ -72,6 +92,13 @@ z-index: 2;
   bottom: -8px;
   border: 2px solid rgb(160 29 29 / 65%);
   z-index: -1;
+  transition: .3s linear all;
+}
+.light &{
+  background-color: #fff;
+  &:before {
+    border-color: #fff;
+  }
 }
 @media (min-width: 1024px) {
   position: absolute;
@@ -80,6 +107,10 @@ z-index: 2;
   min-width: 450px;
   top: 10%;
   height: 80%;
+  .light &{
+    left: 5%;
+    width: 90%;
+  }
 }
 `;
 
@@ -97,6 +128,11 @@ overflow-y: scroll;
 &::-webkit-scrollbar-thumb{
   border-radius: 6px;
   background-color: #a03b3b;
+}
+.light &{
+  &::-webkit-scrollbar-thumb{
+    background-color: #ffcba0a8;
+  }
 }
 `;
 
@@ -381,6 +417,13 @@ font-size: 18px;
   color: #ffffff;
   font-family: 'Gilda Display', serif;
   font-style: italic;
+  
+  .light &{
+    color: #2d2d2d;
+    &:hover {
+      color: #731e1e;
+    }
+  }
   &:hover {
     color: #ff6565;
   }
