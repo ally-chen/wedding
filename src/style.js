@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import border from "./images/border.svg";
+import avatorFrame from "./images/avator-border.png";
 
 export const CoverWrapper = styled.div`
 padding: 0 20px 20px;
@@ -142,6 +143,9 @@ font-size: 36px;
 img + img {
 margin-left: 2.5em;
 margin-top: 10px;
+}
+@media (min-width: 768px) {
+  font-size: 60px;
 }
 @media (min-width: 1024px) {
   font-size: 72px;
@@ -469,4 +473,146 @@ max-width: 80%;
 @media (min-width: 1024px) {
   max-width: 60%;
 }
+`;
+
+export const Brief = styled.div`
+display: flex;
+color: #7f7f7f;
+align-items: center;
+flex-wrap: wrap;
+@media (min-width: 768px) {
+  flex-wrap: nowrap;
+}
+@media (min-width: 1024px) {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+> div {
+  flex-basis: 100%;
+  max-width: 100%;
+  &.togetherText {
+    order: -1;
+    margin: 2em 0;
+  }
+  @media (min-width: 768px) {
+    flex-basis: 33.3%;
+    max-width: 33.3%;
+    &.togetherText {
+      order: 0;
+    }
+  }
+}
+`;
+
+export const CharacterTitle = styled.h2`
+color: #ffcba0a8;
+font-size: 2em;
+font-weight: bold;
+font-family: 'Marck Script', serif;
+margin-bottom: 0;
+@media (min-width: 768px) {
+  font-size: 2.8em;
+}
+small {
+  color: #7f7f7f;
+  font-size: 0.43em;
+  display: block;
+  font-family: 'Marck Script', 'Noto Serif TC', serif;
+  @media (min-width: 768px) { 
+    font-size: 0.4em;
+  }
+}
+`;
+
+export const AvatorWrapper = styled.div`
+position: relative;
+background-position: center;
+background-size: 85%;
+background-repeat: no-repeat;
+max-width: 300px;
+margin: 1em auto;
+&:before {
+  content:'';
+  padding-bottom: 100%;
+  display: block;
+}
+&:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1%;
+  width: 100%;
+  height: 100%;
+  background: url(${avatorFrame}) center/100% no-repeat;
+}
+`;
+
+export const BeenTogether = styled.div`
+font-size: 60px;
+font-family: 'Marck Script', serif;
+letter-spacing: 0.075em;
+padding-left: 0.15em;
+@media (min-width: 1024px) {
+  font-size: 120px;
+}
+`;
+
+export const Quote = styled.span`
+background: linear-gradient(to bottom, transparent 70%, rgb(255, 203, 160, 0.67) 70%, rgb(255, 203, 160, 0.67) 100%);
+line-height: 2em;
+position: relative;
+&:before {
+  content: '“';
+  font-size: 2em;
+  // opacity: 0.5;
+  color: #ffcba0;
+}
+&:after {
+  content: '”';
+  font-size: 2em;
+  // opacity: 0.5;
+  color: #ffcba0;
+}
+`;
+
+export const CharacterCard = styled.div`
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 2em;
+@media (min-width: 768px) {
+  display: block;
+}
+> ${AvatorWrapper} {
+  flex-basis: 100px;
+}
+> ${CharacterTitle} {
+  order: 1;
+  flex-basis: calc(100% - 100px);
+  text-align:left;
+  padding-left: 20px;
+  @media (min-width: 768px) {
+    text-align:center;
+    padding-left: 0px;
+  }
+}
+> .quoteSection {
+  text-align:left;
+  flex-basis: 100%;
+  order: 2;
+  @media (min-width: 768px) {
+    text-align:center;
+  }
+}
+`;
+
+export const StoryText = styled.div`
+margin-top: 3em;
+background: #ffcba0;
+color: #fff;
+max-width: 525px;
+margin-left: auto;
+margin-right: auto;
+padding: 1em;
+box-shadow: 3px -3px 0 0 #fff, 5px -5px 0 0 #ffcba0, -3px 3px 0 0 #fff, -5px 5px 0 0 #ffcba0;
 `;
