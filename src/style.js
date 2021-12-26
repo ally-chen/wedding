@@ -554,6 +554,7 @@ font-size: 60px;
 font-family: 'Marck Script', serif;
 letter-spacing: 0.075em;
 padding-left: 0.15em;
+color: #ffa2a2;
 @media (min-width: 1024px) {
   font-size: 120px;
 }
@@ -619,7 +620,7 @@ position: relative;
   top: 0;
   bottom: 0;
   left: 20px;
-  border-left: 4px dotted #ffcba0;
+  border-left: 4px dotted #ffa2a2;
   z-index: -1;
   @media (min-width: 768px) {
     left: 50%;
@@ -673,10 +674,12 @@ top: 0;
 padding: 0.5em;
 line-height: 1.2;
 color: #fff;
-background: #ffcba0;
-width: 80px;
+background: #ffa2a2;
+width: 85px;
 text-align: center;
-font-size: 14px;
+font-size: 13px;
+font-family: sans-serif;
+font-weight: bold;
 @media (min-width: 768px) {
   left: 50%;
   width: 120px;
@@ -686,10 +689,14 @@ font-size: 14px;
 `;
 
 export const StoryText = styled.div`
-margin: 2em auto;
-background: #ffcba0;
+margin: 2em 20px;
+background: #ffa2a2;
 color: #fff;
-max-width: 525px;
+max-width: 500px;
 padding: 1em;
-box-shadow: 3px -3px 0 0 #fff, 5px -5px 0 0 #ffcba0, -3px 3px 0 0 #fff, -5px 5px 0 0 #ffcba0;
+box-shadow: 3px -3px 0 0 #fff, 5px -5px 0 0 #ffa2a2, -3px 3px 0 0 #fff, -5px 5px 0 0 #ffa2a2;
+@media (min-width: 768px) {
+  margin-left: auto;
+  margin-right: auto;
+}
 `;
