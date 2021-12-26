@@ -482,6 +482,7 @@ align-items: center;
 flex-wrap: wrap;
 @media (min-width: 768px) {
   flex-wrap: nowrap;
+  padding: 40px 20px;
 }
 @media (min-width: 1024px) {
   padding: 40px;
@@ -507,12 +508,12 @@ flex-wrap: wrap;
 
 export const CharacterTitle = styled.h2`
 color: #ffcba0a8;
-font-size: 2em;
+font-size: 32px;
 font-weight: bold;
 font-family: 'Marck Script', serif;
-margin-bottom: 0;
+margin: 0;
 @media (min-width: 768px) {
-  font-size: 2.8em;
+  font-size: 48px;
 }
 small {
   color: #7f7f7f;
@@ -579,6 +580,7 @@ position: relative;
 export const CharacterCard = styled.div`
 display: flex;
 flex-wrap: wrap;
+align-items: center;
 margin-bottom: 2em;
 @media (min-width: 768px) {
   display: block;
@@ -606,13 +608,88 @@ margin-bottom: 2em;
 }
 `;
 
+export const TimeLine = styled.ul`
+list-style: none;
+padding: 0;
+margin: 0;
+position: relative;
+&:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  border-left: 4px dotted #ffcba0;
+  z-index: -1;
+  @media (min-width: 768px) {
+    left: 50%;
+  }
+}
+`;
+
+export const TimeLineContent = styled.div`
+border: 1px solid #e4e4e4;
+padding: 0.5em;
+color: #7f7f7f;
+background: #fff;
+width: calc(100% - 36px);
+margin: 0 auto 0 32px;
+text-align: left;
+@media (min-width: 768px) {
+  width: 45%;
+  padding: 1em;
+}
+.centered &{
+ @media (min-width: 768px) {
+  text-align: center;
+  margin: auto;
+ }
+}
+.left &{
+  @media (min-width: 768px) {
+    margin: 0 auto 0 3%;
+    text-align: right;
+  }
+}
+.right &{
+  @media (min-width: 768px) {
+    margin: 0 3% 0 auto;
+  }
+}
+`;
+
+export const TimeLineItem = styled.li`
+position: relative;
+padding: 2em 0 3em;
+@media (min-width: 768px) {
+  padding: 3em 0 4em;
+}
+`;
+
+export const TimeLineDate = styled.span`
+position: absolute;
+left: 0%;
+top: 0;
+padding: 0.5em;
+line-height: 1.2;
+color: #fff;
+background: #ffcba0;
+width: 80px;
+text-align: center;
+font-size: 14px;
+@media (min-width: 768px) {
+  left: 50%;
+  width: 120px;
+  font-size: 18px;
+  transform: translate(-50%, 0);
+}
+`;
+
 export const StoryText = styled.div`
-margin-top: 3em;
+margin: 2em auto;
 background: #ffcba0;
 color: #fff;
 max-width: 525px;
-margin-left: auto;
-margin-right: auto;
 padding: 1em;
 box-shadow: 3px -3px 0 0 #fff, 5px -5px 0 0 #ffcba0, -3px 3px 0 0 #fff, -5px 5px 0 0 #ffcba0;
 `;

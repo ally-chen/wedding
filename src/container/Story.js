@@ -1,6 +1,6 @@
 import groom from '../images/groom.jpg';
 import bride from '../images/bride.jpg';
-import { StoryText, Title, Brief, BeenTogether, AvatorWrapper, CharacterTitle, Quote, CharacterCard } from '../style';
+import { StoryText, Title, Brief, BeenTogether, AvatorWrapper, CharacterTitle, Quote, CharacterCard, TimeLine, TimeLineItem, TimeLineDate, TimeLineContent } from '../style';
 const Story = () => {
   const duration = Math.ceil((new Date() - new Date('2018/10/30')) / (1000*60*60*24));
   return (
@@ -31,6 +31,36 @@ const Story = () => {
           </div>
         </CharacterCard>
       </Brief>
+      <TimeLine>
+        <TimeLineItem className="centered">
+          <TimeLineDate>2013</TimeLineDate>
+          <TimeLineContent>因為彼此的摯友而相識</TimeLineContent>
+        </TimeLineItem>
+        <TimeLineItem className="left">
+          <TimeLineDate>2014</TimeLineDate>
+          <TimeLineContent>參與了彼此的人生重要事件</TimeLineContent>
+        </TimeLineItem>
+        <TimeLineItem className="right">
+          <TimeLineDate>2015-2018</TimeLineDate>
+          <TimeLineContent>各自在情感中跌跌撞撞，學習成為更好的人</TimeLineContent>
+        </TimeLineItem>
+        <TimeLineItem className="centered">
+          <TimeLineDate>2018年底</TimeLineDate>
+          <TimeLineContent>確認彼此共通的心意</TimeLineContent>
+        </TimeLineItem>
+        <TimeLineItem className="right">
+          <TimeLineDate>2019-2020</TimeLineDate>
+          <TimeLineContent>填補、分享彼此生命中空白的時光</TimeLineContent>
+        </TimeLineItem>
+        <TimeLineItem className="left">
+          <TimeLineDate>2021</TimeLineDate>
+          <TimeLineContent>兩個靈魂的相知相惜，決定攜手步入下一個人生階段</TimeLineContent>
+        </TimeLineItem>
+        <TimeLineItem className="centered">
+          <TimeLineDate>2022</TimeLineDate>
+          <TimeLineContent>We're getting married!</TimeLineContent>
+        </TimeLineItem>
+      </TimeLine>
       <StoryText>發票中不了，手遊神卡抽不到，繞了一圈才發現彼此的重要，原來運氣早就用在我們的遇到。</StoryText>
     </div>
   );
