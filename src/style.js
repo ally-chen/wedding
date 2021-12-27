@@ -529,7 +529,7 @@ small {
 export const AvatorWrapper = styled.div`
 position: relative;
 background-position: center;
-background-size: 85%;
+background-size: 95%;
 background-repeat: no-repeat;
 max-width: 300px;
 margin: 1em auto;
@@ -545,7 +545,32 @@ margin: 1em auto;
   top: -1%;
   width: 100%;
   height: 100%;
-  background: url(${avatorFrame}) center/100% no-repeat;
+  border-radius: 3.5%;
+  background: url(${avatorFrame}) center/100% no-repeat, radial-gradient(circle at center -50%, transparent 80%, rgba(0, 0, 0, 0.3));
+}
+`;
+
+export const SSRSymbol = styled.img`
+position: absolute;
+left: -3%;
+top: -3%;
+max-width: 30%;
+z-index: 2;
+`;
+export const StarList = styled.ul`
+position: absolute;
+right: 5%;
+bottom: 5%;
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+z-index: 2;
+width: 50%;
+> li {
+  > img {
+    max-width: 95%;
+  }
 }
 `;
 

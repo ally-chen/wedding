@@ -2,14 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import pic1 from '../images/photo/01.webp';
-import pic2 from '../images/photo/02.webp';
-import pic3 from '../images/photo/03.webp';
-import pic4 from '../images/photo/04.webp';
-import pic5 from '../images/photo/05.webp';
-import pic6 from '../images/photo/06.webp';
-import pic7 from '../images/photo/07.webp';
-import pic8 from '../images/photo/08.webp';
+import pic1 from '../images/photo/s1-1.webp';
+import pic2 from '../images/photo/s1-2.webp';
+import pic3 from '../images/photo/s1-3.webp';
+import pic4 from '../images/photo/s1-4.webp';
+import pic5 from '../images/photo/s1-5.webp';
+import pic6 from '../images/photo/s2-1.webp';
+import pic7 from '../images/photo/s2-2.webp';
+import pic8 from '../images/photo/s2-3.webp';
+import pic9 from '../images/photo/s2-4.webp';
+import pic10 from '../images/photo/s2-5.webp';
+import pic11 from '../images/photo/s2-6.webp';
+import pic12 from '../images/photo/s2-7.webp';
+import pic13 from '../images/photo/s2-8.webp';
+import pic14 from '../images/photo/s3-1.webp';
+import pic15 from '../images/photo/s3-2.webp';
+import pic16 from '../images/photo/s3-3.webp';
+import pic17 from '../images/photo/s3-4.webp';
+import pic18 from '../images/photo/s3-5.webp';
+import pic19 from '../images/photo/s3-6.webp';
+import pic20 from '../images/photo/s3-7.webp';
+import pic21 from '../images/photo/s3-8.webp';
+import pic22 from '../images/photo/s3-9.webp';
+import pic23 from '../images/photo/s4-1.webp';
+import pic24 from '../images/photo/s4-2.webp';
 import { Title } from '../style';
 
 const PhotoWrapper = styled.div`
@@ -109,14 +125,30 @@ padding: 0;
 const Gallery = () => {
   const [selectSlide, setSelectSlide] = React.useState(null);
   const imgArray = [
-    {url: pic4, position: 'center bottom'},
-    {url: pic3, position: 'center bottom'},
+    {url: pic1, position: 'center bottom'},
     {url: pic2, position: 'center bottom'},
+    {url: pic3, position: 'center bottom'},
+    {url: pic4, position: 'center bottom'},
     {url: pic5},
     {url: pic6, position: 'center top'},
-    {url: pic8, position: 'center 20%'},
-    {url: pic7},
-    {url: pic1},
+    {url: pic7, position: 'center 20%'},
+    {url: pic8},
+    {url: pic9, position: '30% center'},
+    {url: pic10, position: '30% center'},
+    {url: pic11, position: '40% center'},
+    {url: pic12},
+    {url: pic13, position: 'center 70%'},
+    {url: pic14},
+    {url: pic15, position: '60% center'},
+    {url: pic16},
+    {url: pic17},
+    {url: pic18},
+    {url: pic19},
+    {url: pic20, position: 'center 35%'},
+    {url: pic22, position: 'center 30%'},
+    {url: pic21, position: 'center 35%'},
+    {url: pic23},
+    {url: pic24},
   ];
   return (
     <div>

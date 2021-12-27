@@ -1,6 +1,9 @@
 import groom from '../images/groom.webp';
 import bride from '../images/bride.webp';
-import { StoryText, Title, Brief, BeenTogether, AvatorWrapper, CharacterTitle, Quote, CharacterCard, TimeLine, TimeLineItem, TimeLineDate, TimeLineContent } from '../style';
+import star from '../images/star.webp';
+import ssr from '../images/SSR.webp';
+import { StoryText, Title, Brief, BeenTogether, AvatorWrapper, SSRSymbol, StarList, CharacterTitle, Quote, CharacterCard,
+  TimeLine, TimeLineItem, TimeLineDate, TimeLineContent } from '../style';
 const Story = () => {
   const duration = Math.ceil((new Date() - new Date('2018/10/30')) / (1000*60*60*24));
   return (
@@ -9,10 +12,18 @@ const Story = () => {
       <Brief>
         <CharacterCard>
           <CharacterTitle>The Groom<small>李文翔 (aka 廢柴繪師)</small><small>aka Lotus Lee</small></CharacterTitle>
-          <AvatorWrapper style={{backgroundImage: `url(${groom})`}} />
+          <AvatorWrapper style={{backgroundImage: `url(${groom})`}}>
+            <SSRSymbol src={ssr} alt="SSR" />
+            <StarList>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+            </StarList>
+          </AvatorWrapper>
           <div className="quoteSection">
-            {/* <CharacterTitle>The Groom<small>李文翔 (aka Lotus Lee)</small></CharacterTitle> */}
-            <Quote>繪畫是興趣使然，武學是使命的召喚，體悟生命之美是人生中的必然。</Quote>
+            <Quote>天性使然的藝術，守護驅使的武術，無時無刻的生命體悟。</Quote>
           </div>
         </CharacterCard>
         <div className="togetherText">
@@ -24,9 +35,17 @@ const Story = () => {
         </div>
         <CharacterCard>
           <CharacterTitle>The Bride<small>陳怡君 (aka 軟懶工程師)</small><small>aka Ally Chen</small></CharacterTitle>
-          <AvatorWrapper style={{backgroundImage: `url(${bride})`}}  />
+          <AvatorWrapper style={{backgroundImage: `url(${bride})`}}>
+            <SSRSymbol src={ssr} alt="SSR" />
+            <StarList>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+              <li><img src={star} alt="" /></li>
+            </StarList>
+          </AvatorWrapper>
           <div className="quoteSection">
-            {/* <CharacterTitle>The Bride<small>陳怡君 (aka Ally Chen)</small></CharacterTitle> */}
             <Quote>太懶的時候會不小心睡一整天，太認真的時候會不小心寫扣到白天。</Quote>
           </div>
         </CharacterCard>
@@ -54,11 +73,11 @@ const Story = () => {
         </TimeLineItem>
         <TimeLineItem className="right">
           <TimeLineDate>2019-2020</TimeLineDate>
-          <TimeLineContent>彼此包容、磨合，為對方調整雙人舞的步伐。</TimeLineContent>
+          <TimeLineContent>互相包容與磨合，為對方調整自己的節奏，逐漸讓彼此的步伐一致。</TimeLineContent>
         </TimeLineItem>
         <TimeLineItem className="left">
           <TimeLineDate>2021</TimeLineDate>
-          <TimeLineContent>兩個靈魂的相知相惜，決定攜手步入下一個人生階段。</TimeLineContent>
+          <TimeLineContent>彼此相知相惜，決定攜手步入下一個人生階段。</TimeLineContent>
         </TimeLineItem>
         <TimeLineItem className="centered">
           <TimeLineDate>2022</TimeLineDate>
