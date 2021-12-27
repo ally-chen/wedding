@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import { FormWrapper, FormItem, RadioGroup, RadioWrapper, BtnSubmit, ErrorText, TextDefault, LinkList } from '../style';
+import { FormWrapper, FormItem, RadioGroup, RadioWrapper, BtnSubmit, ErrorText, TextDefault, LinkList, MoreInfo } from '../style';
 
 
 const Invitation = ({setIsLoading}) => {
@@ -118,15 +118,15 @@ const Invitation = ({setIsLoading}) => {
         </FormItem>
       ))}
       <FormItem>
-        <label>紙本喜帖</label>
+        <label>紙本喜帖 <MoreInfo text="此為實體喜帖，本網站即為電子喜帖唷！">?</MoreInfo></label>
         <RadioGroup>
           <RadioWrapper>
             <input type="radio" name="paper" {...register("paper", { required: "請選擇是否要收到紙本喜帖!" })} value="Yes" />
-            <span>請寄給我</span>
+            <span>我想收到</span>
           </RadioWrapper>
           <RadioWrapper>
             <input type="radio" name="paper" {...register("paper", { required: "請選擇是否要收到紙本喜帖!" })} value="No" />
-            <span>我不需要</span>
+            <span>響應環保</span>
           </RadioWrapper>
         </RadioGroup>
         {errors && errors.paper && <ErrorText>{errors.paper.message}</ErrorText>}
@@ -149,7 +149,6 @@ const Invitation = ({setIsLoading}) => {
         <label>想說的話</label>
         <textarea rows="5" {...register("message")}></textarea>
       </FormItem>
-      {role === "怡君朋友" && <small>p.s. 當天女方不設禮金桌，有意送禮的朋友們可在領取喜餅時交予工作人員。</small>}
       <BtnSubmit type="submit">送 出</BtnSubmit>
     </FormWrapper>
   ) : (

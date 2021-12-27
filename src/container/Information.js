@@ -7,6 +7,8 @@ const Information = () => {
   return (
     <div>
       <Title>Information</Title>
+      <SubTitle>新郎 & 新娘</SubTitle>
+      <TextDefault>李文翔 ❤ 陳怡君</TextDefault>
       <SubTitle>日期</SubTitle>
       <TextDefault>2022/03/12 (六) 中午12:30</TextDefault>
       <SubTitle>地點</SubTitle>

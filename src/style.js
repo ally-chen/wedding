@@ -227,6 +227,7 @@ width: 100%;
   width: 100%;
   text-align: left;
   margin-bottom: 10px;
+  position: relative;
   @media (min-width: 1024px) {
     width: 80px;
     text-align: right;
@@ -332,6 +333,38 @@ cursor: pointer;
 }
 `;
 
+export const MoreInfo = styled.span`
+width: 16px;
+height: 16px;
+display: inline-block;
+border: 1px solid #ffcba0;
+line-height: 14px;
+text-align: center;
+border-radius: 50%;
+font-size: 14px;
+vertical-align: 3px;
+position: relative;
+@media (min-width: 1024px) {
+  position: absolute;
+  right: -18px;
+  top: calc(50% - 8px);
+}
+&:before {
+  content: '${({text}) => text}';
+  display: none;
+  position: absolute;
+  bottom: 1.5em;
+  left: 0;
+  width: 160px;
+  padding: 0.5em;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.75);
+}
+&:hover:before {
+  display: block;
+}
+`;
+
 export const ErrorText = styled.div`
 position: absolute;
 right: 0;
@@ -376,6 +409,23 @@ justify-content: center;
   border: 2px dashed #fff;
   opacity: 0.6;
   animation: ${rotating} 2.5s linear infinite;
+}
+`;
+
+export const Footer = styled.footer`
+padding: 0.5em;
+font-size: 13px;
+text-align: center;
+z-index: 2;
+position: relative;
+margin-top: 2em;
+.light &{
+  color: #7f7f7f;
+}
+@media (min-width: 1024px) {
+position: absolute;
+right: 1em;
+bottom: 1em;
 }
 `;
 

@@ -5,12 +5,12 @@ import Gallery from './container/Gallery';
 import Story from './container/Story';
 import { Routes, Route, HashRouter as Router, Outlet, NavLink, useLocation } from 'react-router-dom';
 import cover from './images/cover.png';
-import { CoverWrapper, Figure, CardWrapper, CardContent, ChName, LoadingMask, NavLinkList } from './style';
+import { CoverWrapper, Figure, CardWrapper, CardContent, ChName, LoadingMask, NavLinkList, Footer } from './style';
 import './App.css';
 
 const Layout = () => {
   const location = useLocation();
-  console.log('l', location);
+  const currentYear = new Date().getFullYear();
   return (
     <CoverWrapper className={/gallery|story/.test(location.pathname) ? 'light' : ''}>
       <Figure style={{ backgroundImage: `url(${cover})` }}>
@@ -27,6 +27,7 @@ const Layout = () => {
           <Outlet />
         </CardContent>
       </CardWrapper>
+      <Footer>© {currentYear} by Ally Chen</Footer>
     </CoverWrapper>
   );
 };
