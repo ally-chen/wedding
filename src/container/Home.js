@@ -14,7 +14,7 @@ const Home = ({ setIsLoading }) => (
     <TextDefault>Sincerely invite you to their wedding!</TextDefault>
     <TextDateTime>
       2022 03 12<br />
-      <small>Saturday 12:30 P.M.</small>
+      <small>Saturday 12:00 P.M.</small>
     </TextDateTime>
     <TextLocation>
       @晶宴民權館 第八劇場<br />
