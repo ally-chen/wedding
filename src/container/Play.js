@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Footer } from '../style';
 import { Carousel } from 'react-responsive-carousel';
@@ -83,12 +84,15 @@ top: 0;
 right: 0;
 z-index: 2;
 background-color: #f2f2f2;
-padding: 0 1em 1em;
+padding: 1em;
 color: #202020;
-> img {
+img {
   width: 120px;
   display: block;
   margin-top: 0.25em;
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 `;
 
@@ -117,6 +121,7 @@ border-radius: 6px;
 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 padding: 0.5em;
 font-family: 'Helvetica', 'Arial', 'sans-serif';
+white-space: pre-wrap;
 `;
 
 const Author = styled.div`
@@ -168,7 +173,7 @@ justify-content: center;
 }
 `;
 
-const Gallery = () => {
+const Play = () => {
   const [messages, setMessages] = React.useState([]);
   const [animationConfig, setAnimationConfig] = React.useState({height: 0, duration: 0});
   const containerRef = React.useRef();
@@ -278,14 +283,16 @@ const Gallery = () => {
       </Mask>
       <BoardWrap ref={boardRef}>
         <QrcodeWrap>
-          填寫祝福
-          <img src={qrcode} alt="" />
+          <NavLink to="/" title="填寫祝福">
+            填寫祝福
+            <img src={qrcode} alt="" />
+          </NavLink>
         </QrcodeWrap>
         <Board>
           <MessageList height={animationConfig.height} duration={animationConfig.duration} ref={containerRef}>
             {
-              messages.length > 0 && messages.map((n) => (
-                <MessageListItem style={{ alignItems: n.align }}>
+              messages.length > 0 && messages.map((n, i) => (
+                <MessageListItem style={{ alignItems: n.align }} key={i}>
                   <ItemBox>
                     {n.content}
                     {n.name && <Author>{n.name}</Author>}
@@ -300,4 +307,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Play;
