@@ -3,6 +3,7 @@ import Home from './container/Home';
 import Information from './container/Information';
 import Gallery from './container/Gallery';
 import Story from './container/Story';
+import Play from './container/Play';
 import { Routes, Route, HashRouter as Router, Outlet, NavLink, useLocation } from 'react-router-dom';
 import cover from './images/cover.png';
 import { CoverWrapper, Figure, CardWrapper, CardContent, ChName, LoadingMask, NavLinkList, Footer } from './style';
@@ -12,7 +13,7 @@ const Layout = () => {
   const location = useLocation();
   const currentYear = new Date().getFullYear();
   return (
-    <CoverWrapper className={/gallery|story/.test(location.pathname) ? 'light' : ''}>
+    <CoverWrapper className={/gallery|story|play/.test(location.pathname) ? 'light' : ''}>
       <Figure style={{ backgroundImage: `url(${cover})` }}>
         <ChName>文翔 & 怡君</ChName>
       </Figure>
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="information" element={<Information />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="story" element={<Story />} />
+          <Route path="play" element={<Play />} />
           <Route index element={<Home setIsLoading={setIsLoading} />} />
         </Route>
       </Routes>
