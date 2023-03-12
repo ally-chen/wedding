@@ -525,6 +525,23 @@ max-width: 80%;
 }
 `;
 
+export const VideoBox = styled.div`
+position: relative;
+width: 90%;
+margin: 30px auto;
+&:before {
+  content: "";
+  padding-bottom: 56.25%;
+  display: block;
+}
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+`;
+
 export const Brief = styled.div`
 display: flex;
 color: #7f7f7f;
@@ -551,6 +568,10 @@ flex-wrap: wrap;
     max-width: 33.3%;
     &.togetherText {
       order: 0;
+    }
+    &${VideoBox} {
+      flex-basis: 100%;
+      max-width: 100%;
     }
   }
 }

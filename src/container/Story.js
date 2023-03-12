@@ -2,13 +2,19 @@ import groom from '../images/groom.webp';
 import bride from '../images/bride.webp';
 import star from '../images/star.webp';
 import ssr from '../images/SSR.webp';
+import story from '../images/story.mp4';
 import { StoryText, Title, Brief, BeenTogether, AvatorWrapper, SSRSymbol, StarList, CharacterTitle, Quote, CharacterCard,
-  TimeLine, TimeLineItem, TimeLineDate, TimeLineContent } from '../style';
+  TimeLine, TimeLineItem, TimeLineDate, TimeLineContent, VideoBox } from '../style';
 const Story = () => {
   const duration = Math.ceil((new Date() - new Date('2018/10/30')) / (1000*60*60*24));
   return (
     <div>
       <Title>Our Story</Title>
+      <VideoBox>
+        <video playsInline autoPlay controls controlsList="nodownload">
+          <source src={story} type="video/mp4" />
+        </video>
+      </VideoBox>
       <Brief>
         <CharacterCard>
           <CharacterTitle>The Groom<small>李文翔 (aka 廢柴繪師)</small><small>aka Lotus Lee</small></CharacterTitle>
@@ -81,7 +87,7 @@ const Story = () => {
         </TimeLineItem>
         <TimeLineItem className="centered">
           <TimeLineDate>2022</TimeLineDate>
-          <TimeLineContent>We're getting married!</TimeLineContent>
+          <TimeLineContent>We're married!</TimeLineContent>
         </TimeLineItem>
       </TimeLine>
       <StoryText>我們繞了一圈才發現彼此的重要，原來對方就是自己靈魂的另外一塊缺角。</StoryText>

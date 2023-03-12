@@ -233,46 +233,18 @@ const Play = () => {
       }
     }
   }, [messages]);
-  const imgArray = [
-    { url: pic1, position: 'center bottom' },
-    { url: pic2, position: 'center bottom' },
-    { url: pic3, position: 'center bottom' },
-    { url: pic3_2, position: 'center bottom' },
-    { url: pic4, position: 'center bottom' },
-    { url: pic5 },
-    { url: pic5_2 },
-    { url: pic5_3 },
-    { url: pic5_4, position: 'center top' },
-    { url: pic6, position: 'center top' },
-    { url: pic7, position: 'center 20%' },
-    { url: pic7_2, position: 'center 20%' },
-    { url: pic8 },
-    { url: pic9, position: '30% center' },
-    { url: pic10, position: '30% center' },
-    { url: pic11, position: '40% center' },
-    { url: pic12 },
-    { url: pic13, position: 'center 70%' },
-    { url: pic14 },
-    { url: pic14_2, position: '45% center' },
-    { url: pic15, position: '60% center' },
-    { url: pic16 },
-    { url: pic17 },
-    { url: pic17_2 },
-    { url: pic17_3 },
-    { url: pic18 },
-    { url: pic19 },
-    { url: pic20, position: 'center 35%' },
-    { url: pic22, position: 'center 30%' },
-    { url: pic21, position: 'center 35%' },
-    { url: pic23 },
-    { url: pic24 },
-  ];
+
+  const seed = Math.ceil((Math.random()*10));
+  
+  const imgArray = Array.from({length: 30}, (_, i) => ({
+    url: require(`../images/wedding/w-${seed + i*3}.jpg`).default
+  }));
   return (
     <div>
       <OverwriteStyle />
       <Mask>
         <CarouselWrapper>
-          <Carousel showArrows={true} showThumbs={false} dynamicHeight={true} stopOnHover={false} emulateTouch={true} autoPlay={true} interval={5000} infiniteLoop={true}>
+          <Carousel showArrows={true} showIndicators={false} showThumbs={false} dynamicHeight={true} stopOnHover={false} emulateTouch={true} autoPlay={true} interval={5000} infiniteLoop={true}>
             {imgArray.map((n) => (
               <div key={n.url}>
                 <img src={n.url} alt='' />

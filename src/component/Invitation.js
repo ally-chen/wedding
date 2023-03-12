@@ -64,7 +64,8 @@ const Invitation = ({ setIsLoading }) => {
     <TextDefault style={{ marginTop: 30 }}>
       Thanks for your response!
       <LinkList>
-        <li><Link to="gallery" title="Gallery | 精選照片">精選照片</Link></li>
+        <li><Link to="prewedding" title="Prewedding | 婚紗精選">婚紗精選</Link></li>
+        <li><Link to="photos" title="Photos | 精選照片">精選照片</Link></li>
         <li><Link to="story" title="Our Story | 我們的故事">我們的故事</Link></li>
         <li><Link to="play" title="Wishes Wall | 賓客祝福">賓客祝福</Link></li>
       </LinkList>
